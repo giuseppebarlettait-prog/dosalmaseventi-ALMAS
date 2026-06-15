@@ -3,24 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DosAlmas Eventi Napoli</title>
+<title>DosAlmas Exclusive Experience</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET */
+/* ===== RESET ===== */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:'Montserrat', sans-serif;
 }
 
 body{
-background:#0a0a0a;
+background: radial-gradient(circle at top, #0a0a0a, #000);
 color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
-/* NAV */
+/* ===== NAV ===== */
 nav{
 position:fixed;
 top:0;
@@ -29,23 +33,19 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 40px;
-background:rgba(0,0,0,.6);
-backdrop-filter:blur(10px);
+background:rgba(0,0,0,.4);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.08);
 z-index:1000;
 }
 
 nav h1{
+color:#d4af37;
+letter-spacing:2px;
 font-size:18px;
-color:#ffd700;
 }
 
-nav a{
-color:white;
-margin-left:20px;
-text-decoration:none;
-}
-
-/* HERO */
+/* ===== HERO ===== */
 header{
 height:100vh;
 display:flex;
@@ -54,53 +54,74 @@ justify-content:center;
 align-items:center;
 text-align:center;
 background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
 url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7');
 background-size:cover;
 background-position:center;
-}
-
-header img{
-width:180px;
-border-radius:50%;
-margin-bottom:20px;
-box-shadow:0 0 30px #ff00aa;
+position:relative;
 }
 
 header h1{
 font-size:4rem;
-letter-spacing:3px;
+letter-spacing:4px;
+animation:fadeDown 1.2s ease;
 }
 
 header p{
-font-size:1.2rem;
-opacity:0.8;
-margin-top:10px;
+opacity:0;
+letter-spacing:3px;
+animation:fadeUp 1.4s ease forwards;
+animation-delay:.3s;
 }
 
 .btn{
-margin-top:20px;
-background:#ffd700;
+margin-top:25px;
+background:linear-gradient(45deg,#d4af37,#ffdd7a);
 color:black;
-padding:15px 30px;
+padding:16px 34px;
 text-decoration:none;
 font-weight:bold;
-border-radius:30px;
+border-radius:50px;
+box-shadow:0 0 25px rgba(212,175,55,.3);
+transition:.3s;
 }
 
-/* SECTIONS */
+.btn:hover{transform:scale(1.05);}
+
+/* ===== LIVE FOMO ===== */
+.live-bar{
+position:fixed;
+top:70px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(212,175,55,0.12);
+border:1px solid rgba(212,175,55,0.4);
+padding:10px 20px;
+border-radius:50px;
+z-index:999;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:translateX(-50%) scale(1);}
+50%{transform:translateX(-50%) scale(1.05);}
+100%{transform:translateX(-50%) scale(1);}
+}
+
+/* ===== SECTIONS ===== */
 section{
 padding:90px 10%;
 }
 
 h2{
 text-align:center;
+color:#d4af37;
 margin-bottom:40px;
-font-size:2rem;
-color:#ffd700;
+letter-spacing:2px;
+text-transform:uppercase;
 }
 
-/* CARDS */
+/* ===== CARDS ===== */
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -108,48 +129,78 @@ gap:20px;
 }
 
 .card{
-background:rgba(255,255,255,.05);
+background:rgba(255,255,255,.03);
 padding:25px;
-border-radius:15px;
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.1);
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+transition:.3s;
 }
 
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
+.card:hover{
+transform:translateY(-5px);
+border-color:#d4af37;
 }
 
-.gallery img,
-.gallery video{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:10px;
-}
-
-/* COUNTDOWN */
-.countdown{
+/* ===== VIP ===== */
+.vip-box{
 text-align:center;
-font-size:1.5rem;
+opacity:.7;
 margin-top:20px;
-color:#ff4dff;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px;
-background:#000;
-}
-
-.social a{
-color:#ffd700;
-margin:0 10px;
+/* ===== SHARE ===== */
+.share-btn{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#d4af37;
+color:black;
+padding:12px 18px;
+border-radius:50px;
+font-weight:bold;
 text-decoration:none;
+z-index:2000;
 }
+
+/* ===== WHATSAPP ===== */
+.fixed-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50px;
+text-decoration:none;
+z-index:2000;
+}
+
+/* ===== SCROLL FX ===== */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+filter:blur(8px);
+transition:all 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+filter:blur(0);
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard{
+text-align:center;
+margin-top:20px;
+font-size:14px;
+opacity:.7;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
 </style>
 </head>
@@ -159,136 +210,129 @@ text-decoration:none;
 <!-- NAV -->
 <nav>
 <h1>DOSALMAS</h1>
-<div>
-<a href="#eventi">Eventi</a>
-<a href="#gallery">Gallery</a>
-<a href="#vip">VIP</a>
-</div>
 </nav>
+
+<!-- LIVE -->
+<div class="live-bar">
+🔥 LIVE: 18 prenotazioni ultime 2 ore • 6 tavoli rimasti
+</div>
 
 <!-- HERO -->
 <header>
 
-<img src="logo-dosalmas1.jpg.PNG">
-
 <h1>DOSALMAS</h1>
-<p>Eventi esclusivi Napoli</p>
+<p>EXCLUSIVE NIGHT EXPERIENCE • NAPOLI</p>
 
-<a class="btn" href="https://wa.me/393883975843">
-Prenota Ora
-</a>
+<a class="btn" href="https://wa.me/393883975843">BOOK TABLE</a>
 
-<div class="countdown">
-⏳ Prossimo evento tra 3 giorni
-</div>
+<div style="margin-top:20px;opacity:.6" id="countdown"></div>
 
 </header>
 
-<!-- EVENTI -->
-<section id="eventi">
-
-<h2>Eventi</h2>
+<!-- EVENTS -->
+<section>
+<h2>Upcoming Nights</h2>
 
 <div class="cards">
-
-<div class="card">
-<h3>BALORDA NOSTALGIA</h3>
-<p>Venerdì • Musica italiana & commerciale</p>
-</div>
-
-<div class="card">
-<h3>NEASY NIGHT</h3>
-<p>Sabato • Tavoli VIP e spettacolo</p>
-</div>
-
-<div class="card">
-<h3>SUNDAY VIBES</h3>
-<p>Domenica • Aperitivo e DJ set</p>
-</div>
-
+<div class="card"><h3>Balorda Nostalgia</h3><p>Commercial luxury set</p></div>
+<div class="card"><h3>Neasy Night</h3><p>VIP tables + bottle service</p></div>
+<div class="card"><h3>Sunday Vibes</h3><p>Sunset deep experience</p></div>
 </div>
 
 </section>
 
 <!-- VIP -->
-<section id="vip">
-
-<h2>Tavoli VIP</h2>
+<section>
+<h2>VIP Tables</h2>
 
 <div class="cards">
-
-<div class="card">
-<h3>Basic</h3>
-<p>Ingresso + tavolo</p>
+<div class="card"><h3>Silver</h3><p>Entry + table</p></div>
+<div class="card"><h3>Gold</h3><p>Bottle service</p></div>
+<div class="card"><h3>Black</h3><p>Private VIP area</p></div>
 </div>
 
-<div class="card">
-<h3>Premium</h3>
-<p>Tavolo + bottiglia + posizione centrale</p>
-</div>
-
-<div class="card">
-<h3>Exclusive</h3>
-<p>Privé completo + servizio dedicato</p>
-</div>
-
+<div class="vip-box">
+⚠ Limited availability • Selection required
 </div>
 
 </section>
 
-<!-- GALLERY -->
-<section id="gallery">
-
-<h2>Gallery</h2>
-
-<div class="gallery">
-
-<img src="IMG_6833.png">
-<img src="IMG_6841.png">
-<img src="IMG_7228.png">
-
-<video controls>
-<source src="DOSALMAS.mp4" type="video/mp4">
-</video>
-
-</div>
-
-</section>
-
-<!-- PRENOTAZIONE -->
+<!-- REFERRAL VIRAL -->
 <section>
+<h2>Invite & Earn Status</h2>
 
-<h2>Prenotazioni</h2>
-
-<p style="text-align:center;">
-Prenota subito il tuo tavolo o entra in lista
+<p style="text-align:center;opacity:.7">
+Invita amici → aumenta priorità tavolo
 </p>
 
-<br>
+<div style="text-align:center;margin-top:20px">
+<a class="btn" href="https://wa.me/?text=Vieni%20con%20me%20a%20DosAlmas%20🔥">INVITE FRIENDS</a>
+</div>
 
-<p style="text-align:center;">
-<a class="btn" href="https://wa.me/393883975843">
-WhatsApp Booking
-</a>
-</p>
+</section>
+
+<!-- DASHBOARD -->
+<section>
+<h2>Live Status</h2>
+
+<div class="dashboard">
+📊 Tavoli prenotati: 18 / 25<br>
+🔥 Sold out probability: HIGH<br>
+⚡ Accesso selezionato attivo
+</div>
+
+</section>
+
+<!-- BOOK -->
+<section>
+<h2>Join Experience</h2>
+
+<div style="text-align:center">
+<a class="btn" href="https://wa.me/393883975843">BOOK NOW</a>
+</div>
 
 </section>
 
 <!-- FOOTER -->
-<footer>
-
-<h3>DOSALMAS EVENTI NAPOLI</h3>
-
-<div class="social">
-<a href="https://instagram.com/dosalmas_eventi_">Instagram</a>
-<a href="https://tiktok.com/@dos_almas_events">TikTok</a>
-</div>
-
-<p style="margin-top:20px;">
-© 2026 DosAlmas
-</p>
-
+<footer style="text-align:center;padding:40px;background:#000;opacity:.8">
+<h3>DOSALMAS EXPERIENCE</h3>
+<p>© 2026</p>
 </footer>
+
+<!-- FLOAT -->
+<a class="fixed-btn" href="https://wa.me/393883975843">💬</a>
+
+<a class="share-btn" href="https://wa.me/?text=Sto%20andando%20a%20DosAlmas%20🔥%20chi%20viene%3F">
+SHARE
+</a>
+
+<!-- SCRIPT -->
+<script>
+
+// scroll reveal
+const observer=new IntersectionObserver(e=>{
+e.forEach(x=>{
+if(x.isIntersecting)x.target.classList.add("active")
+})
+},{threshold:.15})
+
+document.querySelectorAll("section,.card").forEach(el=>{
+el.classList.add("reveal")
+observer.observe(el)
+})
+
+// countdown
+const date=new Date("2026-06-22T23:00:00").getTime()
+
+setInterval(()=>{
+let now=new Date().getTime()
+let d=date-now
+
+document.getElementById("countdown").innerHTML=
+"⏳ Manca "+Math.floor(d/86400000)+" giorni"
+},1000)
+
+</script>
 
 </body>
 </html>
