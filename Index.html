@@ -15,6 +15,10 @@
             padding: 0;
             box-sizing: border-box;
         }
+        /* Effetto scorrimento fluido quando si clicca sul menu */
+        html {
+            scroll-behavior: smooth;
+        }
         :root {
             --bg-dark: #0a0508;
             --bg-card: #140b10;
@@ -45,9 +49,9 @@
             align-items: center;
             padding: 20px 50px;
             background: linear-gradient(to bottom, rgba(10,5,8,0.9), transparent);
-            position: absolute;
+            position: fixed; /* Rimane fisso in alto durante lo scroll */
             width: 100%;
-            z-index: 10;
+            z-index: 100;
         }
         .logo h2 {
             font-size: 24px;
@@ -146,7 +150,8 @@
             text-align: center;
             font-size: 22px;
             color: var(--pink-light);
-            margin: 60px 0 40px;
+            margin: 0;
+            padding: 80px 0 40px; /* Spazio per non far coprire il titolo dal menu fisso */
             text-transform: uppercase;
         }
 
@@ -156,7 +161,7 @@
             justify-content: center;
             gap: 30px;
             max-width: 1200px;
-            margin: 0 auto 60px;
+            margin: 0 auto 40px;
             padding: 0 20px;
         }
         .event-card {
@@ -182,7 +187,7 @@
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            background-color: #f7e1e8; /* Tonalità piastrelle rosa chiaro */
+            background-color: #f7e1e8;
             position: relative;
         }
         .event-day {
@@ -312,7 +317,7 @@
         .join-experience {
             background: linear-gradient(rgba(10, 5, 8, 0.6), rgba(10, 5, 8, 0.6)), 
                         url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1200') no-repeat center center/cover;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
         }
         .join-experience h2 {
@@ -361,7 +366,6 @@
             font-size: 18px;
         }
         
-        /* Decorazione di fondo in stile piastrella maiolica */
         .tile-pattern-bottom {
             height: 25px;
             background: repeating-linear-gradient(45deg, #26121c, #26121c 10px, #140b10 10px, #140b10 20px);
@@ -376,20 +380,19 @@
             <h2 class="italic-title">Dos Almas</h2>
         </div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Events</a>
-            <a href="#">VIP Tables</a>
-            <a href="#">Experience</a>
-            <a href="#">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#tables">VIP Tables</a>
+            <a href="#experience">Experience</a>
         </nav>
-        <a href="#" class="btn-book-top">Book Table</a>
+        <a href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20prenotare%20un%20tavolo%20per%20Dos%20Almas." target="_blank" class="btn-book-top">Book Table</a>
     </header>
 
-    <section class="hero">
+    <section id="home" class="hero">
         <p class="hero-subtitle">⚡ Exclusive Night Experience</p>
         <h1>DOS ALMAS</h1>
         <div class="city italic-title">Napoli</div>
-        <a href="#" class="btn-hero">
+        <a href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20prenotare%20un%20tavolo%20per%20Dos%20Almas." target="_blank" class="btn-hero">
             Book Your Table 
             <span>💚</span>
         </a>
@@ -398,68 +401,72 @@
         </div>
     </section>
 
-    <h2 class="section-title">✨ Upcoming Nights ✨</h2>
-    <div class="events-container">
-        <div class="event-card">
-            <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=600');"></div>
-            <div class="event-details">
-                <div class="event-day">Venerdì</div>
-                <div class="event-name">BALORDA<br>NOSTALGIA</div>
-                <div class="event-genre">Commercial Luxury Set</div>
-                <div class="event-location">📍 POMIGLIANO D'ARCO<br><small>VIALE DELL'AERONAUTICA 1</small></div>
+    <section id="events">
+        <h2 class="section-title">✨ Upcoming Nights ✨</h2>
+        <div class="events-container">
+            <div class="event-card">
+                <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=600');"></div>
+                <div class="event-details">
+                    <div class="event-day">Venerdì</div>
+                    <div class="event-name">BALORDA<br>NOSTALGIA</div>
+                    <div class="event-genre">Commercial Luxury Set</div>
+                    <div class="event-location">📍 POMIGLIANO D'ARCO<br><small>VIALE DELL'AERONAUTICA 1</small></div>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600');"></div>
+                <div class="event-details">
+                    <div class="event-day">Sabato</div>
+                    <div class="event-name">NEASY</div>
+                    <div class="event-genre">VIP Tables / Bottle Service</div>
+                    <div class="event-location">📍 NAPOLI<br><small>VIA COROGLIO</small></div>
+                </div>
             </div>
         </div>
-        <div class="event-card">
-            <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600');"></div>
-            <div class="event-details">
-                <div class="event-day">Sabato</div>
-                <div class="event-name">NEASY</div>
-                <div class="event-genre">VIP Tables / Bottle Service</div>
-                <div class="event-location">📍 NAPOLI<br><small>VIA COROGLIO</small></div>
-            </div>
-        </div>
-    </div>
+    </section>
 
-    <h2 class="section-title">✨ VIP Tables ✨</h2>
-    <div class="vip-container">
-        <div class="vip-grid">
-            <div class="vip-card">
-                <h3>SILVER</h3>
-                <div class="vip-icon">🪑</div>
-                <div class="vip-desc">Entry + Table</div>
+    <section id="tables">
+        <h2 class="section-title">✨ VIP Tables ✨</h2>
+        <div class="vip-container">
+            <div class="vip-grid">
+                <div class="vip-card">
+                    <h3>SILVER</h3>
+                    <div class="vip-icon">🪑</div>
+                    <div class="vip-desc">Entry + Table</div>
+                </div>
+                <div class="vip-card">
+                    <h3>GOLD</h3>
+                    <div class="vip-icon">🍾</div>
+                    <div class="vip-desc">Bottle Service</div>
+                </div>
+                <div class="vip-card">
+                    <h3>BLACK</h3>
+                    <div class="vip-icon">🛋️</div>
+                    <div class="vip-desc">Private VIP Area</div>
+                </div>
             </div>
-            <div class="vip-card">
-                <h3>GOLD</h3>
-                <div class="vip-icon">🍾</div>
-                <div class="vip-desc">Bottle Service</div>
-            </div>
-            <div class="vip-card">
-                <h3>BLACK</h3>
-                <div class="vip-icon">🛋️</div>
-                <div class="vip-desc">Private VIP Area</div>
-            </div>
+            <p class="vip-notice">LIMITED AVAILABILITY • SELECTION REQUIRED</p>
         </div>
-        <p class="vip-notice">LIMITED AVAILABILITY • SELECTION REQUIRED</p>
-    </div>
 
-    <div class="status-container">
-        <div class="status-box">
-            <h4>INVITE & EARN STATUS</h4>
-            <p>Invita i tuoi amici</p>
-            <p style="color: var(--text-muted); font-size: 11px;">Aumenta la priorità tavolo</p>
-            <a href="#" class="btn-invite">Invita Ora 💬</a>
+        <div class="status-container">
+            <div class="status-box">
+                <h4>INVITE & EARN STATUS</h4>
+                <p>Invita i tuoi amici</p>
+                <p style="color: var(--text-muted); font-size: 11px;">Aumenta la priorità tavolo</p>
+                <a href="https://wa.me/?text=Guarda%20questo%20locale%20a%20Napoli!%20Andiamo?" target="_blank" class="btn-invite">Invita Ora 💬</a>
+            </div>
+            <div class="status-box" style="text-align: left; padding-left: 50px;">
+                <h4 style="text-align: center; margin-left: -30px;">LIVE STATUS</h4>
+                <p>📅 Tavoli Prenotati: 18 / 25</p>
+                <p>🔥 Sold Out Probability: HIGH</p>
+                <p>⚡ Accesso Selezionato Attivo</p>
+            </div>
         </div>
-        <div class="status-box" style="text-align: left; padding-left: 50px;">
-            <h4 style="text-align: center; margin-left: -30px;">LIVE STATUS</h4>
-            <p>📅 Tavoli Prenotati: 18 / 25</p>
-            <p>🔥 Sold Out Probability: HIGH</p>
-            <p>⚡ Accesso Selezionato Attivo</p>
-        </div>
-    </div>
+    </section>
 
-    <section class="join-experience">
+    <section id="experience" class="join-experience">
         <h2 class="brand-name">JOIN THE EXPERIENCE</h2>
-        <a href="#" class="btn-black-book">BOOK NOW 💬</a>
+        <a href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20prenotare%20un%20tavolo%20per%20Dos%20Almas." target="_blank" class="btn-black-book">BOOK NOW 💬</a>
     </section>
 
     <footer>
@@ -468,7 +475,7 @@
         <div class="social-icons">
             <a href="#">📸</a>
             <a href="#">🎵</a>
-            <a href="#">💬</a>
+            <a href="https://wa.me/393331234567" target="_blank">💬</a>
         </div>
     </footer>
     <div class="tile-pattern-bottom"></div>
