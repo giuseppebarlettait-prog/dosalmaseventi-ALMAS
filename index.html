@@ -161,26 +161,33 @@
             padding: 0 20px;
         }
         
-        .event-link {
-            text-decoration: none;
-            width: 50%;
-            display: flex;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .event-link:hover {
-            transform: scale(1.02);
-        }
-        
         .event-card {
             background-color: var(--pink-light);
             color: #501d31;
-            width: 100%;
+            width: 50%;
             border-radius: 4px;
             display: flex;
             overflow: hidden;
             border: 4px solid var(--pink-light);
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            position: relative; /* Essenziale per il link invisibile */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .event-card:hover {
+            transform: scale(1.02);
+        }
+
+        /* Link Invisibile che copre l'intera card */
+        .card-overlay-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            cursor: pointer;
+        }
+
         .event-img {
             width: 40%;
             background-size: cover;
@@ -389,33 +396,35 @@
         <h2 class="section-title">✨ Upcoming Nights ✨</h2>
         <div class="events-container">
             
-            <!-- CARD 1: BALORDA NOSTALGIA (Link Instagram) -->
-            <a href="https://www.instagram.com/balordanostalgiaofficial?igsh=MXdvOTA2cWgzOG04NQ==" target="_blank" class="event-link">
-                <div class="event-card">
-                    <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=600');"></div>
-                    <div class="event-details">
-                        <div class="event-day">Venerdì</div>
-                        <div class="event-name">BALORDA<br>NOSTALGIA</div>
-                        <div class="event-genre">Commercial Luxury Set</div>
-                        <div class="event-location">📍 POMIGLIANO D'ARCO<br><small>VIALE DELL'AERONAUTICA 1</small></div>
-                        <div style="font-size: 10px; color: #8a4f66; margin-top: 15px; font-weight: bold;">Scopri su Instagram ↗</div>
-                    </div>
+            <!-- CARD 1: BALORDA NOSTALGIA -->
+            <div class="event-card">
+                <!-- Il link invisibile è posizionato qui per coprire tutto in modo corretto -->
+                <a href="https://www.instagram.com/balordanostalgiaofficial?igsh=MXdvOTA2cWgzOG04NQ==" target="_blank" class="card-overlay-link"></a>
+                
+                <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=600');"></div>
+                <div class="event-details">
+                    <div class="event-day">Venerdì</div>
+                    <div class="event-name">BALORDA<br>NOSTALGIA</div>
+                    <div class="event-genre">Commercial Luxury Set</div>
+                    <div class="event-location">📍 POMIGLIANO D'ARCO<br><small>VIALE DELL'AERONAUTICA 1</small></div>
+                    <div style="font-size: 10px; color: #8a4f66; margin-top: 15px; font-weight: bold;">Scopri su Instagram ↗</div>
                 </div>
-            </a>
+            </div>
 
-            <!-- CARD 2: NEASY (Ora è un link Instagram) -->
-            <a href="https://www.instagram.com/thisis.omnia?igsh=MXVqanlnNWVna2tyeA==" target="_blank" class="event-link">
-                <div class="event-card">
-                    <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600');"></div>
-                    <div class="event-details">
-                        <div class="event-day">Sabato</div>
-                        <div class="event-name">NEASY</div>
-                        <div class="event-genre">VIP Tables / Bottle Service</div>
-                        <div class="event-location">📍 NAPOLI<br><small>VIA COROGLIO</small></div>
-                        <div style="font-size: 10px; color: #8a4f66; margin-top: 15px; font-weight: bold;">Scopri su Instagram ↗</div>
-                    </div>
+            <!-- CARD 2: NEASY -->
+            <div class="event-card">
+                <!-- Il link invisibile copre tutta la card del Neasy (Omnia) -->
+                <a href="https://www.instagram.com/thisis.omnia?igsh=MXVqanlnNWVna2tyeA==" target="_blank" class="card-overlay-link"></a>
+                
+                <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600');"></div>
+                <div class="event-details">
+                    <div class="event-day">Sabato</div>
+                    <div class="event-name">NEASY</div>
+                    <div class="event-genre">VIP Tables / Bottle Service</div>
+                    <div class="event-location">📍 NAPOLI<br><small>VIA COROGLIO</small></div>
+                    <div style="font-size: 10px; color: #8a4f66; margin-top: 15px; font-weight: bold;">Scopri su Instagram ↗</div>
                 </div>
-            </a>
+            </div>
 
         </div>
     </section>
