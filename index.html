@@ -160,14 +160,26 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+        
+        .event-link {
+            text-decoration: none;
+            width: 50%;
+            display: flex;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .event-link:hover {
+            transform: scale(1.02);
+        }
+        
         .event-card {
             background-color: var(--pink-light);
             color: #501d31;
-            width: 50%;
+            width: 100%;
             border-radius: 4px;
             display: flex;
             overflow: hidden;
             border: 4px solid var(--pink-light);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         .event-img {
             width: 40%;
@@ -197,6 +209,7 @@
             font-weight: 700;
             line-height: 1.1;
             margin-bottom: 15px;
+            color: #501d31;
         }
         .event-genre {
             font-size: 10px;
@@ -207,6 +220,7 @@
         .event-location {
             font-size: 11px;
             font-weight: 600;
+            color: #501d31;
         }
 
         /* VIP Tables */
@@ -362,7 +376,7 @@
         <p class="hero-subtitle">⚡ Exclusive Night Experience</p>
         <h1>DOS ALMAS</h1>
         <div class="city italic-title">Napoli</div>
-        <a href="https://wa.me/393883975843text=Ciao,%20vorrei%20prenotare%20un%20tavolo%20per%20Dos%20Almas." target="_blank" class="btn-hero">
+        <a href="https://wa.me/393883975843?text=Ciao,%20vorrei%20prenotare%20un%20tavolo%20per%20Dos%20Almas." target="_blank" class="btn-hero">
             Book Your Table 💬
         </a>
         <div class="live-counter">
@@ -374,24 +388,35 @@
     <section id="events">
         <h2 class="section-title">✨ Upcoming Nights ✨</h2>
         <div class="events-container">
-            <div class="event-card">
-                <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=600');"></div>
-                <div class="event-details">
-                    <div class="event-day">Venerdì</div>
-                    <div class="event-name">BALORDA<br>NOSTALGIA</div>
-                    <div class="event-genre">Commercial Luxury Set</div>
-                    <div class="event-location">📍 POMIGLIANO D'ARCO<br><small>VIALE DELL'AERONAUTICA 1</small></div>
+            
+            <!-- CARD 1: BALORDA NOSTALGIA (Link Instagram) -->
+            <a href="https://www.instagram.com/balordanostalgiaofficial?igsh=MXdvOTA2cWgzOG04NQ==" target="_blank" class="event-link">
+                <div class="event-card">
+                    <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=600');"></div>
+                    <div class="event-details">
+                        <div class="event-day">Venerdì</div>
+                        <div class="event-name">BALORDA<br>NOSTALGIA</div>
+                        <div class="event-genre">Commercial Luxury Set</div>
+                        <div class="event-location">📍 POMIGLIANO D'ARCO<br><small>VIALE DELL'AERONAUTICA 1</small></div>
+                        <div style="font-size: 10px; color: #8a4f66; margin-top: 15px; font-weight: bold;">Scopri su Instagram ↗</div>
+                    </div>
                 </div>
-            </div>
-            <div class="event-card">
-                <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600');"></div>
-                <div class="event-details">
-                    <div class="event-day">Sabato</div>
-                    <div class="event-name">NEASY</div>
-                    <div class="event-genre">VIP Tables / Bottle Service</div>
-                    <div class="event-location">📍 NAPOLI<br><small>VIA COROGLIO</small></div>
+            </a>
+
+            <!-- CARD 2: NEASY (Ora è un link Instagram) -->
+            <a href="https://www.instagram.com/thisis.omnia?igsh=MXVqanlnNWVna2tyeA==" target="_blank" class="event-link">
+                <div class="event-card">
+                    <div class="event-img" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=600');"></div>
+                    <div class="event-details">
+                        <div class="event-day">Sabato</div>
+                        <div class="event-name">NEASY</div>
+                        <div class="event-genre">VIP Tables / Bottle Service</div>
+                        <div class="event-location">📍 NAPOLI<br><small>VIA COROGLIO</small></div>
+                        <div style="font-size: 10px; color: #8a4f66; margin-top: 15px; font-weight: bold;">Scopri su Instagram ↗</div>
+                    </div>
                 </div>
-            </div>
+            </a>
+
         </div>
     </section>
 
@@ -438,21 +463,13 @@
     <!-- EXPERIENCE -->
     <section id="experience" class="join-experience">
         <h2 class="brand-name">JOIN THE EXPERIENCE</h2>
-        <a href="https://wa.me/393883975843text=Ciao,%20vorrei%20bloccare%20un%20tavolo%20adesso." target="_blank" class="btn-black-book">BOOK NOW 💬</a>
+        <a href="https://wa.me/393883975843?text=Ciao,%20vorrei%20bloccare%20un%20tavolo%20adesso." target="_blank" class="btn-black-book">BOOK NOW 💬</a>
     </section>
 
     <!-- FOOTER -->
     <footer>
         <div class="logo-footer italic-title">Dos Almas</div>
         <div class="footer-sub">Exclusive Night Experience - Napoli</div>
-        <div class="social">
-<a href="https://www.instagram.com/dosalmas_eventi_">Instagram</a>
-<a href="https://www.tiktok.com/@dos_almas_events">TikTok</a>
-</div>
-
-<p style="margin-top:20px;">
-© 2026 Dosalmas Eventi
-</p>
     </footer>
 
 </body>
